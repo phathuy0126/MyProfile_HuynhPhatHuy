@@ -1,0 +1,417 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(70, 70, 70);
+  font-family: "Indie Flower", cursive;
+}
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+html,
+body {
+  background-color: var(--background);
+  scroll-behavior: smooth;
+}
+:root {
+  --background: #f0f2f5;
+  --mycolor: #3069fe;
+}
+.banner {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+}
+.banner img {
+  object-fit: cover;
+}
+/* info */
+.info {
+  font-size: 0.9rem;
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 30px 0px;
+  transform: translateY(-50%);
+}
+.info div {
+  margin: auto;
+}
+.info div:hover {
+  color: var(--mycolor) !important;
+  transition: 0.3s ease;
+}
+.info .avatar {
+  border-radius: 20px;
+  overflow: hidden;
+  width: fit-content;
+  /* min-height: 100px; */
+  cursor: pointer;
+}
+.info .name div:first-child {
+  color: rgb(50, 50, 50);
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.info .name i {
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.5s ease;
+}
+.info .name i:hover {
+  color: var(--mycolor);
+}
+/* main */
+.main {
+  transform: translateY(-5%);
+}
+/* navbar */
+.navbar {    
+    position: sticky;
+    top: 40px;
+    left: 0px;
+  background-color: #fff;
+  width: fit-content;
+  margin: auto;
+  border-radius: 20px;
+  text-transform: uppercase;  
+}
+.navbar_mobile {
+  display: none;
+}
+.navbar ul {
+  list-style: none;
+}
+.navbar ul li {
+  overflow: hidden;
+  margin: 20px 0px;
+  border-radius: 15px;
+}
+.navbar ul li a {
+  text-decoration: none;
+  color: rgb(50, 50, 50);
+  background-color: rgb(243, 243, 243);
+  width: 100px;
+  height: 100px;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.3s ease;
+}
+.navbar ul li a i {
+  font-size: 1.6rem;
+}
+.navbar ul li a:hover i {
+  color: var(--mycolor);
+}
+.navbar ul li a:hover {
+  color: var(--mycolor);
+}
+.navbar_active {
+  background-color: var(--mycolor) !important;
+  color: #fff !important;
+  background-image: linear-gradient(142.17deg, #3086ff 6.66%, #304cfd 91.48%);
+  box-shadow: inset -0.25rem -0.25rem 0.3125rem rgba(0, 0, 0, 0.1),
+    inset 0.25rem 0.25rem 0.3125rem rgba(255, 255, 255, 0.23);
+}
+.navbar_active i {
+  color: #fff;
+}
+.navbar_active:hover i {
+  color: #fff !important;
+}
+/* content */
+.content {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 30px;
+}
+.content div h2:hover,
+.content div p:hover {
+  color: var(--mycolor);
+  transition: 0.3s ease;
+}
+/*card about*/
+.card_about img {
+    width: 50px;
+    margin: auto;
+}
+.card_about div {
+    border-radius: 25px;
+}
+.card_about .card-body {
+    min-height: 130px;
+}
+/*Resume*/
+.resume img {
+    width: 50px;
+    margin: auto;
+}   
+.resume div {
+    border-radius: 25px;
+}
+.resume .card-body {
+    min-height: 110px;
+}
+/*Skills*/
+.skills .skill {
+    width: 100%;
+    background-color: var(--background);
+    height: 30px;
+    margin: 1rem;    
+    position: relative;    
+    display: none; 
+    opacity: 0;
+    transition: .3s ease;
+}
+.skill_item_active {  
+  opacity: 1 !important;
+  display: block !important;
+}
+.skill_item_1::after {
+    content: "Html";  
+    position: absolute;
+    color: #fff;      
+    height: 100%;
+    padding-left: 1rem;
+    line-height: 30px;    
+}
+.skill_item_1::before {
+    content: '95%';
+    padding-right: 1rem;
+    line-height: 30px;
+    position: absolute;
+    background-color: var(--mycolor);
+    height: 100%;
+    border-radius: 25px;
+    text-align: right;
+    color: #fff;
+    width: 95%;
+    animation: skill_item_1 1s forwards;    
+}
+@keyframes skill_item_1 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 95%;
+  }
+}
+.skill_item_2::after {
+    content: "Css";  
+    position: absolute;
+    color: #fff;      
+    height: 100%;
+    padding-left: 1rem;
+    line-height: 30px;    
+}
+.skill_item_2::before {
+    content: '87%';
+    padding-right: 1rem;
+    line-height: 30px;
+    position: absolute;
+    background-color: var(--mycolor);
+    height: 100%;
+    border-radius: 25px;
+    text-align: right;
+    color: #fff;
+    width: 87%;
+    animation: skill_item_2 1s forwards;
+}
+@keyframes skill_item_2 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 87%;
+  }
+}
+.skill_item_3::after {
+    content: "Javascript";  
+    position: absolute;
+    color: #fff;      
+    height: 100%;
+    padding-left: 1rem;
+    line-height: 30px;    
+}
+.skill_item_3::before {
+    content: '30%';
+    padding-right: 1rem;
+    line-height: 30px;
+    position: absolute;
+    background-color: var(--mycolor);
+    height: 100%;
+    border-radius: 25px;
+    text-align: right;
+    color: #fff;
+    width: 30%;
+    animation: skill_item_3 1s forwards;
+}
+@keyframes skill_item_3 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 30%;
+  }
+}
+.skill_item_4::after {
+    content: "Jquery";  
+    position: absolute;
+    color: #fff;      
+    height: 100%;
+    padding-left: 1rem;
+    line-height: 30px;    
+}
+.skill_item_4::before {
+    content: '75%';
+    padding-right: 1rem;
+    line-height: 30px;
+    position: absolute;
+    background-color: var(--mycolor);
+    height: 100%;
+    border-radius: 25px;
+    text-align: right;
+    color: #fff;
+    width: 75%;
+    animation: skill_item_4 1s forwards;
+}
+@keyframes skill_item_4 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 75%;
+  }
+}
+.skill_item_5::after {
+    content: "Bootstrap";  
+    position: absolute;
+    color: #fff;      
+    height: 100%;
+    padding-left: 1rem;
+    line-height: 30px;    
+}
+.skill_item_5::before {
+    content: '87%';
+    padding-right: 1rem;
+    line-height: 30px;
+    position: absolute;
+    background-color: var(--mycolor);
+    height: 100%;
+    border-radius: 25px;
+    text-align: right;
+    color: #fff;
+    width: 87%;
+    animation: skill_item_5 1s forwards;
+}
+@keyframes skill_item_5 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 87%;
+  }
+}
+.skill_item_6::after {
+    content: "Php";  
+    position: absolute;
+    color: #fff;      
+    height: 100%;
+    padding-left: 1rem;
+    line-height: 30px;    
+}
+.skill_item_6::before {
+    content: '0%';
+    padding-right: 1rem;
+    line-height: 30px;
+    position: absolute;
+    background-color: var(--mycolor);
+    height: 100%;
+    border-radius: 25px;
+    text-align: right;
+    color: #fff;
+    width: 15%;
+    animation: skill_item_6 1s forwards;
+}
+@keyframes skill_item_6 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 15%;
+  }
+}
+/* responsive */
+/* mobile */
+@media screen and (max-width: 767px) {
+  * {
+    font-size: 0.9rem;
+  }
+  .info {
+    margin: 0px 10px;
+  }
+  .main {
+    transform: translateY(-13rem) !important;
+  }
+}
+/* tablet */
+@media screen and (max-width: 992px) {
+  .info .name {
+    text-align: center;
+  }
+  .main {
+    transform: translateY(-12rem);
+  }
+  .navbar {
+    display: none;
+  }
+  .navbar_mobile {
+    display: block;
+    position: fixed;
+    bottom: 0px;
+    background-color: #fff;
+    width: 100%;
+  }
+  .navbar_mobile ul {
+    margin-bottom: 0px;
+  }
+  .navbar_mobile ul li {
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 15px;
+    width: 19%;
+  }
+  .navbar_mobile ul li a {
+    text-decoration: none;
+    color: rgb(50, 50, 50);
+    display: block;
+    text-align: center;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.3s ease;
+    padding-top: 18px;
+    padding-bottom: 8px;
+  }
+  .navbar_mobile ul li a:hover {
+    color: var(--mycolor);
+  }
+  .navbar_mobile ul li a:hover i {
+    color: var(--mycolor);
+  }
+  .navbar_active_mobile {
+    color: var(--mycolor);
+    border-bottom: var(--mycolor) solid 2px;
+  }
+}
+/* laptop and pc */
+@media screen and (min-width: 993px) and (max-width: 2000px) {
+  .info .name {
+    border-right: 1px solid rgb(206, 206, 206);
+  }
+}
