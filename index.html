@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="css/loading.css">
 </head>
 
 <body>
@@ -98,10 +99,13 @@
                         </div>
                     </div>
                     <div class="row gioithieu">
-                        <div class="col-12">                            
+                        <div class="col-12">
                             <p>Với niềm đam mê công nghệ từ nhỏ Huy là chàng trai trẻ năm sinh 2002 rất yêu thích
                                 công nghệ lập trình và thiết kế website.</p>
-                            <p>Vì thế anh ấy đã theo học nghành lập trình web ở trường Cao Đẳng Hotec để theo đuổi đam mê của mình. Từ đó anh ấy không ngừng học hỏi trao dồi kiến thức để theo đuổi đam mê của mình. Anh ấy là một người siêng năng, có tuy duy sáng tạo, hòa đồng vui tính và làm việc nhóm rất hiệu quả</p>
+                            <p>Vì thế anh ấy đã theo học nghành lập trình web ở trường Cao Đẳng Hotec để theo đuổi đam
+                                mê của mình. Từ đó anh ấy không ngừng học hỏi trao dồi kiến thức để theo đuổi đam mê của
+                                mình. Anh ấy là một người siêng năng, có tuy duy sáng tạo, hòa đồng vui tính và làm việc
+                                nhóm rất hiệu quả</p>
                             <p>Anh ấy đã tạo nhiều project nhằm rèn luyện kĩ năng cũng như tư duy code .</p>
                         </div>
                     </div>
@@ -213,58 +217,79 @@
     <nav class="navbar_mobile">
         <ul>
             <li>
-                <a href="#" class="navbar_active_mobile">
+                <a href="#about" class="navbar_active_mobile">
                     <i class="far fa-user"></i>
                     About
                 </a>
             </li>
-            <li><a href="#">
+            <li><a href="#resume">
                     <i class="far fa-file-alt"></i>
                     resume
                 </a></li>
-            <li><a href="#">
+            <li><a href="#works">
                     <i class="far fa-address-book"></i>
                     works
                 </a></li>
-            <li><a href="#">
+            <li><a href="#blog">
                     <i class="far fa-bookmark"></i>
-                    block
+                    blog
                 </a></li>
-            <li><a href="#">
+            <li><a href="#contact">
                     <i class="far fa-paper-plane"></i>
                     contact
                 </a></li>
         </ul>
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-        <script>
-            $(function () {
-                //active navbar 
-                $('.navbar ul li a').click(function() {
-                    $('.navbar ul li a').removeClass('navbar_active');
-                    $(this).addClass('navbar_active');                    
-                })
-                //skill item active scroll
-                $(window).scroll(function () {
-                    let cach_top = $('html').scrollTop();
-                    let vitri_skills = $('.resume').offset().top - 500;
-                    if (cach_top >= vitri_skills) {
-                        $('.skill').addClass('skill_item_active')
-                    } else {
-                        $('.skill').removeClass('skill_item_active')
-                    }
-                })
+    </nav>
+    <!-- loading -->
+    <div class="loading_container">
+        <p>l</p>
+        <p>o</p>
+        <p>a</p>
+        <p>d</p>
+        <p>i</p>
+        <p>n</p>
+        <p>g</p>
+    </div>             
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            //loading
+            let loading = setInterval(function () {
+                $('.loading_container').addClass('loading_hide');
+                clearInterval(loading);
+            }, 2000)
+            //active navbar 
+            $('.navbar ul li a').click(function () {
+                $('.navbar ul li a').removeClass('navbar_active');
+                $(this).addClass('navbar_active');
             })
-        </script>
+            //cative nabar mobile
+            $('.navbar_mobile ul li a').click(function () {
+                $('.navbar_mobile ul li a').removeClass('navbar_active_mobile');
+                $(this).addClass('navbar_active_mobile');
+            })
+            //skill item active scroll
+            $(window).scroll(function () {
+                let cach_top = $('html').scrollTop();
+                let vitri_skills = $('.resume').offset().top - 500;
+                if (cach_top >= vitri_skills) {
+                    $('.skill').addClass('skill_item_active')
+                } else {
+                    $('.skill').removeClass('skill_item_active')
+                }
+            })
+        })
+    </script>
 </body>
 
 </html>

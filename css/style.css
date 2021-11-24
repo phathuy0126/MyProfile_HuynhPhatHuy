@@ -6,6 +6,9 @@
   color: rgb(70, 70, 70);
   font-family: "Indie Flower", cursive;
 }
+::selection {
+  color: var(--mycolor);    
+}
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 html,
 body {
@@ -35,10 +38,6 @@ body {
 }
 .info div {
   margin: auto;
-}
-.info div:hover {
-  color: var(--mycolor) !important;
-  transition: 0.3s ease;
 }
 .info .avatar {
   border-radius: 20px;
@@ -126,11 +125,6 @@ body {
   background-color: #fff;
   border-radius: 20px;
   padding: 30px;
-}
-.content div h2:hover,
-.content div p:hover {
-  color: var(--mycolor);
-  transition: 0.3s ease;
 }
 /*card about*/
 .card_about img {
@@ -245,7 +239,7 @@ body {
     border-radius: 25px;
     text-align: right;
     color: #fff;
-    width: 30%;
+    width: 50%;
     animation: skill_item_3 1s forwards;
 }
 @keyframes skill_item_3 {
@@ -253,7 +247,7 @@ body {
     width: 0%;
   }
   100% {
-    width: 30%;
+    width: 60%;
   }
 }
 .skill_item_4::after {
@@ -332,7 +326,7 @@ body {
     border-radius: 25px;
     text-align: right;
     color: #fff;
-    width: 15%;
+    width: 40%;
     animation: skill_item_6 1s forwards;
 }
 @keyframes skill_item_6 {
@@ -340,7 +334,7 @@ body {
     width: 0%;
   }
   100% {
-    width: 15%;
+    width: 40%;
   }
 }
 /* responsive */
@@ -405,8 +399,11 @@ body {
     color: var(--mycolor);
   }
   .navbar_active_mobile {
-    color: var(--mycolor);
-    border-bottom: var(--mycolor) solid 2px;
+    color: var(--mycolor) !important;
+    border-bottom: var(--mycolor) solid 2px;    
+  }
+  .navbar_active_mobile i {
+    color: var(--mycolor) !important;
   }
 }
 /* laptop and pc */
