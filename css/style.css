@@ -1,23 +1,26 @@
-* {
+body {
+  background-color: var(--background);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
   color: rgb(70, 70, 70);
-  font-family: "Indie Flower", cursive;
+  font-family: var(--font-family-sans-serif);
+}
+* {
+  scroll-behavior: smooth;
 }
 ::selection {
-  color: var(--mycolor);    
-}
-@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
-html,
-body {
-  background-color: var(--background);
-  scroll-behavior: smooth;
+  color: var(--mycolor);
 }
 :root {
   --background: #f0f2f5;
   --mycolor: #3069fe;
+  --w_skill_item_1: 95%;
+  --w_skill_item_2: 87%;
+  --w_skill_item_3: 60%;
+  --w_skill_item_4: 75%;
+  --w_skill_item_5: 85%;
+  --w_skill_item_6: 40%;  
 }
 .banner {
   width: 100%;
@@ -64,15 +67,15 @@ body {
   transform: translateY(-5%);
 }
 /* navbar */
-.navbar {    
-    position: sticky;
-    top: 40px;
-    left: 0px;
+.navbar {
+  position: sticky;
+  top: 40px;
+  left: 0px;
   background-color: #fff;
   width: fit-content;
   margin: auto;
   border-radius: 20px;
-  text-transform: uppercase;  
+  text-transform: uppercase;
 }
 .navbar_mobile {
   display: none;
@@ -128,214 +131,235 @@ body {
 }
 /*card about*/
 .card_about img {
-    width: 50px;
-    margin: auto;
+  width: 50px;
+  margin: auto;
 }
 .card_about div {
-    border-radius: 25px;
+  border-radius: 25px;
 }
 .card_about .card-body {
-    min-height: 130px;
+  min-height: 130px;
 }
 /*Resume*/
 .resume img {
-    width: 50px;
-    margin: auto;
-}   
+  width: 50px;
+  margin: auto;
+}
 .resume div {
-    border-radius: 25px;
+  border-radius: 25px;
 }
 .resume .card-body {
-    min-height: 110px;
+  min-height: 110px;
 }
 /*Skills*/
-.skills .skill {
-    width: 100%;
-    background-color: var(--background);
-    height: 30px;
-    margin: 1rem;    
-    position: relative;    
-    display: none; 
-    opacity: 0;
-    transition: .3s ease;
+.skills .card {
+  border-radius: 25px;
 }
-.skill_item_active {  
+.skills .skill {
+  border-radius: 25px;
+  width: 100%;
+  background-color: var(--background);
+  height: 30px;
+  margin: 1rem;
+  position: relative;
+  display: none;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+.skill_item_active {
   opacity: 1 !important;
   display: block !important;
 }
 .skill_item_1::after {
-    content: "Html";  
-    position: absolute;
-    color: #fff;      
-    height: 100%;
-    padding-left: 1rem;
-    line-height: 30px;    
+  content: "Html";
+  position: absolute;
+  color: #fff;
+  height: 100%;
+  padding-left: 1rem;
+  line-height: 30px;
 }
 .skill_item_1::before {
-    content: '95%';
-    padding-right: 1rem;
-    line-height: 30px;
-    position: absolute;
-    background-color: var(--mycolor);
-    height: 100%;
-    border-radius: 25px;
-    text-align: right;
-    color: #fff;
-    width: 95%;
-    animation: skill_item_1 1s forwards;    
+  content: "95%";
+  padding-right: 1rem;
+  line-height: 30px;
+  position: absolute;
+  background-color: var(--mycolor);
+  height: 100%;
+  border-radius: 25px;
+  text-align: right;
+  color: #fff;
+  animation: skill_item_1 1s forwards;
 }
 @keyframes skill_item_1 {
   0% {
     width: 0%;
   }
   100% {
-    width: 95%;
+    width: var(--w_skill_item_1);
   }
 }
 .skill_item_2::after {
-    content: "Css";  
-    position: absolute;
-    color: #fff;      
-    height: 100%;
-    padding-left: 1rem;
-    line-height: 30px;    
+  content: "Css";
+  position: absolute;
+  color: #fff;
+  height: 100%;
+  padding-left: 1rem;
+  line-height: 30px;
 }
 .skill_item_2::before {
-    content: '87%';
-    padding-right: 1rem;
-    line-height: 30px;
-    position: absolute;
-    background-color: var(--mycolor);
-    height: 100%;
-    border-radius: 25px;
-    text-align: right;
-    color: #fff;
-    width: 87%;
-    animation: skill_item_2 1s forwards;
+  content: "87%";
+  padding-right: 1rem;
+  line-height: 30px;
+  position: absolute;
+  background-color: var(--mycolor);
+  height: 100%;
+  border-radius: 25px;
+  text-align: right;
+  color: #fff;
+  animation: skill_item_2 1s forwards;
 }
 @keyframes skill_item_2 {
   0% {
     width: 0%;
   }
   100% {
-    width: 87%;
+    width: var(--w_skill_item_2);
   }
 }
 .skill_item_3::after {
-    content: "Javascript";  
-    position: absolute;
-    color: #fff;      
-    height: 100%;
-    padding-left: 1rem;
-    line-height: 30px;    
+  content: "Javascript";
+  position: absolute;
+  color: #fff;
+  height: 100%;
+  padding-left: 1rem;
+  line-height: 30px;
 }
 .skill_item_3::before {
-    content: '30%';
-    padding-right: 1rem;
-    line-height: 30px;
-    position: absolute;
-    background-color: var(--mycolor);
-    height: 100%;
-    border-radius: 25px;
-    text-align: right;
-    color: #fff;
-    width: 50%;
-    animation: skill_item_3 1s forwards;
+  content: "30%";
+  padding-right: 1rem;
+  line-height: 30px;
+  position: absolute;
+  background-color: var(--mycolor);
+  height: 100%;
+  border-radius: 25px;
+  text-align: right;
+  color: #fff;
+  animation: skill_item_3 1s forwards;
 }
 @keyframes skill_item_3 {
   0% {
     width: 0%;
   }
   100% {
-    width: 60%;
+    width: var(--w_skill_item_3);
   }
 }
 .skill_item_4::after {
-    content: "Jquery";  
-    position: absolute;
-    color: #fff;      
-    height: 100%;
-    padding-left: 1rem;
-    line-height: 30px;    
+  content: "Jquery";
+  position: absolute;
+  color: #fff;
+  height: 100%;
+  padding-left: 1rem;
+  line-height: 30px;
 }
 .skill_item_4::before {
-    content: '75%';
-    padding-right: 1rem;
-    line-height: 30px;
-    position: absolute;
-    background-color: var(--mycolor);
-    height: 100%;
-    border-radius: 25px;
-    text-align: right;
-    color: #fff;
-    width: 75%;
-    animation: skill_item_4 1s forwards;
+  content: "75%";
+  padding-right: 1rem;
+  line-height: 30px;
+  position: absolute;
+  background-color: var(--mycolor);
+  height: 100%;
+  border-radius: 25px;
+  text-align: right;
+  color: #fff;
+  animation: skill_item_4 1s forwards;
 }
 @keyframes skill_item_4 {
   0% {
     width: 0%;
   }
   100% {
-    width: 75%;
+    width: var(--w_skill_item_4);
   }
 }
 .skill_item_5::after {
-    content: "Bootstrap";  
-    position: absolute;
-    color: #fff;      
-    height: 100%;
-    padding-left: 1rem;
-    line-height: 30px;    
+  content: "Bootstrap";
+  position: absolute;
+  color: #fff;
+  height: 100%;
+  padding-left: 1rem;
+  line-height: 30px;
 }
 .skill_item_5::before {
-    content: '87%';
-    padding-right: 1rem;
-    line-height: 30px;
-    position: absolute;
-    background-color: var(--mycolor);
-    height: 100%;
-    border-radius: 25px;
-    text-align: right;
-    color: #fff;
-    width: 87%;
-    animation: skill_item_5 1s forwards;
+  content: "87%";
+  padding-right: 1rem;
+  line-height: 30px;
+  position: absolute;
+  background-color: var(--mycolor);
+  height: 100%;
+  border-radius: 25px;
+  text-align: right;
+  color: #fff;
+  animation: skill_item_5 1s forwards;
 }
 @keyframes skill_item_5 {
   0% {
     width: 0%;
   }
   100% {
-    width: 87%;
+    width: var(--w_skill_item_5);
   }
 }
 .skill_item_6::after {
-    content: "Php";  
-    position: absolute;
-    color: #fff;      
-    height: 100%;
-    padding-left: 1rem;
-    line-height: 30px;    
+  content: "Php";
+  position: absolute;
+  color: #fff;
+  height: 100%;
+  padding-left: 1rem;
+  line-height: 30px;
 }
 .skill_item_6::before {
-    content: '0%';
-    padding-right: 1rem;
-    line-height: 30px;
-    position: absolute;
-    background-color: var(--mycolor);
-    height: 100%;
-    border-radius: 25px;
-    text-align: right;
-    color: #fff;
-    width: 40%;
-    animation: skill_item_6 1s forwards;
+  content: "0%";
+  padding-right: 1rem;
+  line-height: 30px;
+  position: absolute;
+  background-color: var(--mycolor);
+  height: 100%;
+  border-radius: 25px;
+  text-align: right;
+  color: #fff;
+  animation: skill_item_6 1s forwards;
 }
 @keyframes skill_item_6 {
   0% {
     width: 0%;
   }
   100% {
-    width: 40%;
+    width: var(--w_skill_item_6);
   }
+}
+/* works */
+.works div {
+  border-radius: 15px;
+  overflow: hidden;  
+}
+/* contact */
+.contact input,
+.contact textarea {
+  padding: 25px 0px 25px 20px;
+  border-radius: 15px;
+  font-size: 1rem;
+}
+.contact button {
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: var(--mycolor) !important;
+  color: #fff !important;
+  background-image: linear-gradient(142.17deg, #3086ff 6.66%, #304cfd 91.48%);
+  box-shadow: inset -0.25rem -0.25rem 0.3125rem rgba(0, 0, 0, 0.1),
+    inset 0.25rem 0.25rem 0.3125rem rgba(255, 255, 255, 0.23);
 }
 /* responsive */
 /* mobile */
@@ -400,7 +424,7 @@ body {
   }
   .navbar_active_mobile {
     color: var(--mycolor) !important;
-    border-bottom: var(--mycolor) solid 2px;    
+    border-bottom: var(--mycolor) solid 2px;
   }
   .navbar_active_mobile i {
     color: var(--mycolor) !important;
