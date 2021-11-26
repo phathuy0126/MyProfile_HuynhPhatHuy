@@ -45,9 +45,14 @@ body {
 .info .avatar {
   border-radius: 20px;
   overflow: hidden;
-  width: fit-content;
-  /* min-height: 100px; */
+  width: 150px;
+  height: 150px;
   cursor: pointer;
+}
+.info .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .info .name div:first-child {
   color: rgb(50, 50, 50);
@@ -64,7 +69,7 @@ body {
 }
 /* main */
 .main {
-  transform: translateY(-5%);
+  transform: translateY(-3%);
 }
 /* navbar */
 .navbar {
@@ -140,6 +145,9 @@ body {
 .card_about .card-body {
   min-height: 130px;
 }
+.card_about .card-text {
+  font-size: 0.9rem;
+}
 /*Resume*/
 .resume img {
   width: 50px;
@@ -150,6 +158,9 @@ body {
 }
 .resume .card-body {
   min-height: 110px;
+}
+.resume .card-text {
+  font-size: 0.9rem;
 }
 /*Skills*/
 .skills .card {
@@ -343,6 +354,26 @@ body {
   border-radius: 15px;
   overflow: hidden;  
 }
+.works .card-img-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.works a {
+  color: #fff;
+  text-decoration: none;  
+}
+.works div div:hover img {    
+  animation: hover_zoom_in 2s ease;        
+}
+@keyframes hover_zoom_in {
+  40%{
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 /* contact */
 .contact input,
 .contact textarea {
@@ -394,6 +425,9 @@ body {
   }
   .navbar_mobile ul {
     margin-bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   .navbar_mobile ul li {
     display: inline-block;
@@ -428,6 +462,9 @@ body {
   }
   .navbar_active_mobile i {
     color: var(--mycolor) !important;
+  }
+  .navbar_mobile ul {
+    padding-left: 0px !important;
   }
 }
 /* laptop and pc */
