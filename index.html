@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/loading.css">
+        crossorigin="anonymous" referrerpolicy="no-referrer" />    
+    <link rel="stylesheet" href="sass/loading.css">
 </head>
 
 <body>
@@ -344,15 +344,13 @@
         </ul>
     </nav>
     <!-- loading -->
-    <div class="loading_container">
-        <p>l</p>
-        <p>o</p>
-        <p>a</p>
-        <p>d</p>
-        <p>i</p>
-        <p>n</p>
-        <p>g</p>
-    </div>
+    <!-- note 100% sure with the ARIA stuff. I need to do more testing. -->
+<div class="loader__wrap" role="alertdialog" aria-busy="true" aria-live="polite" aria-label="Loading…">
+	<div class="loader" aria-hidden="true">
+		<div class="loader__sq"></div>
+		<div class="loader__sq"></div>
+	</div>
+</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -368,7 +366,7 @@
         $(function () {
             //loading
             let loading = setInterval(function () {
-                $('.loading_container').addClass('loading_hide');
+                $('.loader__wrap').addClass('loading_hide');
                 clearInterval(loading);
             }, 2000)
             //active navbar 
