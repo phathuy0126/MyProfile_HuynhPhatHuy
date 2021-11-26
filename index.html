@@ -230,7 +230,7 @@
                                     alt="">
                                 <a href="https://phathuy0126.github.io/forman-PhatHuy/">
                                     <div class="card-img-overlay">
-                                        <h5 class="card-title">web gir xinh</h5>
+                                        <h5 class="card-title">web girl xinh</h5>
                                     </div>
                                 </a>
                             </div>
@@ -240,7 +240,7 @@
                                 <img class="card-img"
                                     src="https://tse2.mm.bing.net/th?id=OIP.sd2Z1_Z1zbpsYHh_6XeK7QHaD5&pid=Api&P=0&w=308&h=163"
                                     alt="">
-                                <a href="">
+                                <a href="https://phathuy0126.github.io/Huy-thi-tkwnc/">
                                     <div class="card-img-overlay">
                                         <h5 class="card-title">web hotel</h5>
                                     </div>
@@ -252,7 +252,7 @@
                                 <img class="card-img"
                                     src="https://tse2.mm.bing.net/th?id=OIP.sd2Z1_Z1zbpsYHh_6XeK7QHaD5&pid=Api&P=0&w=308&h=163"
                                     alt="">
-                                <a href="">
+                                <a href="https://phathuy0126.github.io/Huy-thi-tkwnc/">
                                     <div class="card-img-overlay">
                                         <h5 class="card-title">web hub</h5>
                                     </div>
@@ -264,7 +264,7 @@
                                 <img class="card-img"
                                     src="https://tse2.mm.bing.net/th?id=OIP.sd2Z1_Z1zbpsYHh_6XeK7QHaD5&pid=Api&P=0&w=308&h=163"
                                     alt="">
-                                <a href="">
+                                <a href="https://phathuy0126.github.io/Huy-thi-tkwnc/">
                                     <div class="card-img-overlay">
                                         <h5 class="card-title">web cafe</h5>
                                     </div>
@@ -276,7 +276,7 @@
                                 <img class="card-img"
                                     src="https://tse2.mm.bing.net/th?id=OIP.sd2Z1_Z1zbpsYHh_6XeK7QHaD5&pid=Api&P=0&w=308&h=163"
                                     alt="">
-                                <a href="">
+                                <a href="https://phathuy0126.github.io/Huy-thi-tkwnc/">
                                     <div class="card-img-overlay">
                                         <h5 class="card-title">web chưa biết</h5>
                                     </div>
@@ -287,6 +287,11 @@
                     <div class="row" id="blog">
                         <div class="col-12 my-4">
                             <h2>Blog</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div>Đang cập nhật</div>
                         </div>
                     </div>
                     <div class="row" id="contact">
@@ -347,14 +352,17 @@
                 </a></li>
         </ul>
     </nav>
-    <!-- loading -->
-    <!-- note 100% sure with the ARIA stuff. I need to do more testing. -->
+    <!-- loading -->    
     <div class="loader__wrap" role="alertdialog" aria-busy="true" aria-live="polite" aria-label="Loading…">
         <div class="loader" aria-hidden="true">
             <div class="loader__sq"></div>
             <div class="loader__sq"></div>
         </div>
     </div>
+    <!-- click show image large -->
+    <div class="avatar_overlay">
+        <img src="" alt="">
+    </div>  
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -385,13 +393,20 @@
             })
             //skill item active scroll
             $(window).scroll(function () {
+                var h_body=$('body').height();
                 let cach_top = $('html').scrollTop();
-                let vitri_skills = $('.resume').offset().top - 500;
+                let vitri_skills = $('.skills').offset().top - h_body;
                 if (cach_top >= vitri_skills) {
                     $('.skill').addClass('skill_item_active')
                 } else {
                     $('.skill').removeClass('skill_item_active')
                 }
+            })
+            //click show image avatar large
+            $('.avatar, .avatar_overlay').click(function() {
+                $('.avatar_overlay').toggleClass('show');
+                var srcImg_avatar = $('.avatar>img').attr('src');
+                var hihi = $('.avatar_overlay>img').attr('src',srcImg_avatar);            
             })
         })
     </script>
