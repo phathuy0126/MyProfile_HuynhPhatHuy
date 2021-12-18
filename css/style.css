@@ -169,7 +169,7 @@ body {
   margin: auto;
 }
 .card_about div {
-  border-radius: 25px;
+  border-radius: 25px;       
 }
 .card_about .card-text {
   font-size: 0.9rem;

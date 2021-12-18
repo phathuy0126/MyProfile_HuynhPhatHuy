@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="sass/loading.css">
 </head>
 
 <body>
@@ -115,7 +114,7 @@
                         </div>
                     </div>
                     <div class="row card_about">
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 my-4">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3 mb-lg-4">
                             <div class="card text-center pt-2">
                                 <img class="card-img-top"
                                     src="https://cdn.jsdelivr.net/gh/minhkhoi2001/code/vcard/icon-design.svg" alt="">
@@ -125,7 +124,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 my-4">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3 mb-lg-4">
                             <div class="card text-center pt-2">
                                 <img class="card-img-top"
                                     src="https://cdn.jsdelivr.net/gh/minhkhoi2001/code/vcard/icon-dev.svg" alt="">
@@ -136,7 +135,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 my-4">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3 mb-lg-4">
                             <div class="card text-center pt-2">
                                 <img class="card-img-top"
                                     src="https://cdn.jsdelivr.net/gh/minhkhoi2001/code/vcard/icon-photo.svg" alt="">
@@ -146,7 +145,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 my-4">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3 mb-lg-4">
                             <div class="card text-center pt-2">
                                 <img class="card-img-top"
                                     src="https://cdn.jsdelivr.net/gh/minhkhoi2001/code/vcard/icon-app.svg" alt="">
@@ -164,7 +163,7 @@
                         </div>
                     </div>
                     <div class="row resume">
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 my-4">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3 mb-lg-4">
                             <div class="card text-center pt-2">
                                 <img class="card-img-top"
                                     src="https://cdn.jsdelivr.net/gh/minhkhoi2001/code/vcard/icon-education.svg" alt="">
@@ -175,7 +174,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 my-4">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3 mb-lg-4">
                             <div class="card text-center pt-2">
                                 <img class="card-img-top"
                                     src="https://cdn.jsdelivr.net/gh/minhkhoi2001/code/vcard/icon-experience.svg"
@@ -352,7 +351,7 @@
                 </a></li>
         </ul>
     </nav>
-    <!-- loading -->    
+    <!-- loading -->
     <div class="loader__wrap" role="alertdialog" aria-busy="true" aria-live="polite" aria-label="Loading…">
         <div class="loader" aria-hidden="true">
             <div class="loader__sq"></div>
@@ -362,7 +361,7 @@
     <!-- click show image large -->
     <div class="avatar_overlay">
         <img src="" alt="">
-    </div>  
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -374,14 +373,19 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <!-- thư viện GreenSock -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
     <script>
         $(function () {
+
             //loading
-            let loading = setInterval(function () {
-                $('.loader__wrap').addClass('loading_hide');
-                clearInterval(loading);
-            }, 2000)
+            // var loading = setInterval(function () {
+            //     $('.loader__wrap').addClass('loading_hide');
+            //     clearInterval(loading);
+            // }, 2000)
             //active navbar 
+            // TweenMax
+            TweenMax.staggerFrom($('.content div div'), 0.8, { top: 100, opacity: 0 }, 0.3)
             $('.navbar ul li a').click(function () {
                 $('.navbar ul li a').removeClass('navbar_active');
                 $(this).addClass('navbar_active');
@@ -393,9 +397,8 @@
             })
             //skill item active scroll
             $(window).scroll(function () {
-                var h_body=$('body').height();
-                let cach_top = $('html').scrollTop();
-                let vitri_skills = $('.skills').offset().top - h_body;
+                var cach_top = $('html').scrollTop();
+                var vitri_skills = $('.skills').offset().top - 768;
                 if (cach_top >= vitri_skills) {
                     $('.skill').addClass('skill_item_active')
                 } else {
@@ -403,10 +406,10 @@
                 }
             })
             //click show image avatar large
-            $('.avatar, .avatar_overlay').click(function() {
+            $('.avatar, .avatar_overlay').click(function () {
                 $('.avatar_overlay').toggleClass('show');
                 var srcImg_avatar = $('.avatar>img').attr('src');
-                var hihi = $('.avatar_overlay>img').attr('src',srcImg_avatar);            
+                var hihi = $('.avatar_overlay>img').attr('src', srcImg_avatar);
             })
         })
     </script>
