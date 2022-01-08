@@ -70,7 +70,7 @@ body {
   opacity: 0;    
 }
 .avatar_overlay img {
-  width: 50%;  
+  width: 42%;  
   border-radius: 25px;
 }
 .show {
@@ -432,6 +432,9 @@ body {
   }
   .main {
     transform: translateY(-13rem) !important;
+  }  
+  .avatar_overlay img {
+    width: 90% !important;  
   }
 }
 /* tablet */
@@ -441,7 +444,7 @@ body {
   }
   .main {
     transform: translateY(-12rem);
-  }
+  }  
   .navbar {
     display: none;
   }

@@ -27,7 +27,7 @@
         <div class="row info">
             <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12">
                 <div class="avatar text-center mb-4">
-                    <img src="https://tse3.mm.bing.net/th?id=OIP.lQYEUY7G_Rl7xm6FHK3OugHaEK&pid=Api&P=0&w=279&h=157"
+                    <img src="https://scontent.fsgn13-1.fna.fbcdn.net/v/t39.30808-6/217635110_571541167340821_2769903152943486443_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=SFf0D4EJ6fcAX-RcH9h&_nc_ht=scontent.fsgn13-1.fna&oh=00_AT9bkCZ76_XUNkhGAQqF66619ic8z2Sv2fG4heR0fz8gbw&oe=61DE5F9D"
                         class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}"
                         alt="">
                 </div>
@@ -374,7 +374,6 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <!-- thư viện GreenSock -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
     <script>
         $(function () {
 
@@ -384,8 +383,6 @@
             //     clearInterval(loading);
             // }, 2000)
             //active navbar 
-            // TweenMax
-            TweenMax.staggerFrom($('.content div div'), 0.8, { top: 100, opacity: 0 }, 0.3)
             $('.navbar ul li a').click(function () {
                 $('.navbar ul li a').removeClass('navbar_active');
                 $(this).addClass('navbar_active');
@@ -409,7 +406,7 @@
             $('.avatar, .avatar_overlay').click(function () {
                 $('.avatar_overlay').toggleClass('show');
                 var srcImg_avatar = $('.avatar>img').attr('src');
-                var hihi = $('.avatar_overlay>img').attr('src', srcImg_avatar);
+                $('.avatar_overlay>img').attr('src', srcImg_avatar);
             })
         })
     </script>
